@@ -18,10 +18,15 @@ if(isset($_POST['submit-search'])){
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL.'index.php'; ?>">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo ROOT_URL.'index.php'; ?>">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo ROOT_URL;?>addpost.php">Add Post<span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+      <ul>
+      <li style='float: right;' class="nav-item active">
+        <a class="nav-link" href="<?php echo ROOT_URL.'register.php'; ?>">Register<span class="sr-only">(current)</span></a>
       </li>
     </ul>
 
