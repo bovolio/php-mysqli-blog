@@ -6,8 +6,8 @@
     // Check for submit
     if(isset($_POST['submit'])){
     // Form Variables
-    $username= mysqli_real_escape_string($conn, $_POST['username']);
-    $email= mysqli_real_escape_string($conn, $_POST['email']);
+    $username=htmlentities(trim(mysqli_real_escape_string($conn, $_POST['username'])));
+    $email= htmlentities(trim(mysqli_real_escape_string($conn, $_POST['email'])));
 
         //Check to see values are entered in forms & DB TABLE
         if (!isset($_POST['username'] , $_POST['password'], $_POST['email'])) {
@@ -34,16 +34,16 @@
         }
     } 
         if ($stmt = $conn->prepare('SELECT id, password FROM accounts WHERE email = ?')){
-            $stmt->bind_param('s', $_POST['email']);
+            $stmt->bind_param('s', $email);
             $stmt->execute(); 
             $stmt->store_result(); 
             // Store the result so we can check if the email exists in the database.
             if ($stmt->num_rows > 0) {
-                // Username already exists
+                // Email already exists
                 $email_err = "E-mail already exists! Please choose another.";
         } else {
         if ($stmt = $conn->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
-            $stmt->bind_param('s', $_POST['username']);
+            $stmt->bind_param('s', $username);
             $stmt->execute(); 
             $stmt->store_result(); 
             // Store the result so we can check if the account exists in the database.
@@ -55,8 +55,8 @@
                 if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
                 // Username and Email don't exist, insert new account
                 if ($stmt = $conn->prepare('INSERT INTO accounts (username, password, email) VALUES (?, ?, ?)')) {
-                    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-                    $stmt->bind_param('sss', $_POST['username'], $password, $_POST['email']);
+                    $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+                    $stmt->bind_param('sss', $username, $passwordHashed, $email);
                     $stmt->execute();
                     $alert = "<div class='alert alert-dismissible alert-success' name='alert-success'>
                     <button type='button' class='close' data-dismiss='alert'>&times;</button>
@@ -70,7 +70,8 @@
         $conn->close();
     }
 }
-}
+    }
+
 ?>
 
 <?php include 'inc/header.php'; ?>
