@@ -10,7 +10,7 @@ if(isset($_POST['submit-search'])){
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style='color:#D40ED4' href="<?php echo ROOT_URL.'index.php'; ?>">PHP Blog</a>
+  <a class="navbar-brand" style='color:#D40ED6' href="<?php echo ROOT_URL; ?>">PHP Blog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,10 +18,10 @@ if(isset($_POST['submit-search'])){
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL.'index.php'; ?>">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo ROOT_URL;?>addpost.php">Add Post<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo ROOT_URL.'addpost.php';?>">Add Post<span class="sr-only">(current)</span></a>
       </li>
       </ul>
       <ul style='list-style-type: none;'>

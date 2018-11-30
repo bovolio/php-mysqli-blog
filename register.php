@@ -102,5 +102,7 @@
         </div>
         <input type='submit' value='submit' name='submit' class='btn btn-primary'>
     </form>
+    <br>
+    <p>Already have an account? <a href="login.php">Login here</a>.</p>
 </div>
 <?php include 'inc/footer.php'; ?>
