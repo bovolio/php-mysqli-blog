@@ -1,7 +1,7 @@
 <?php
-    require 'config/config.php';
-    require 'config/db.php';
-    include 'config/success.php';
+    require "../config/config.php";
+    require '../config/db.php';
+    include '../config/success.php';
 $query = 'SELECT * FROM posts ORDER BY timestamp DESC';
 // TODO: ADD VALIDATION FOR FORMS
 
@@ -22,8 +22,8 @@ mysqli_free_result($result);
 mysqli_close($conn);
 ?>
 
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/navbar.php'; ?>
+<?php include '../inc/header.php'; ?>
+<?php include '../inc/navbar.php'; ?>
 <?php if(isset($success)) { echo 
 "<div class='alert alert-dismissible alert-success' name='alert-success'>
   <button type='button' class='close' data-dismiss='alert'>&times;</button>
@@ -73,4 +73,4 @@ unlink('config/success.php');
 </div>
 <?php endforeach; ?>
 
-<?php include 'inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>
