@@ -4,7 +4,7 @@
     // include '../config/success.php';
 $query = 'SELECT * FROM posts ORDER BY timestamp DESC';
 // TODO: ADD VALIDATION FOR FORMS IN BACKEND
-
+// TODO: ADD NOTIFICATIONS USING SESSIONS
 
 // GET RESULTS
 
