@@ -1,11 +1,11 @@
 <?php
-    require 'config/config.php';
-    require 'config/db.php';
+    require '../config/config.php';
+    require '../config/db.php';
 
     // Check for submit
     if(isset($_POST['submit'])){
     // Form Variables
-    $handle= fopen('config/success.php','w');
+    $handle= fopen('../config/success.php','w');
     $txt= '<?php $success2="" ?>';
     fwrite($handle, $txt);
     fclose($handle);
@@ -61,8 +61,8 @@ mysqli_close($conn);
 
 ?>
 
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/navbar.php'; ?>
+<?php include '../inc/header.php'; ?>
+<?php include '../inc/navbar.php'; ?>
 <div class='container'>
     <br>
     <h1>Edit Post</h1>
@@ -86,4 +86,4 @@ mysqli_close($conn);
         <input type='submit' value='submit' name='submit' class='btn btn-primary'>
     </form>
 </div>
-<?php include 'inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

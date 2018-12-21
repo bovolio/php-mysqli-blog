@@ -1,14 +1,14 @@
 <?php
-    require 'config/config.php';
-    require 'config/db.php';
+    require '../config/config.php';
+    require '../config/db.php';
 
     // Check for submit
     if(isset($_POST['submit_add'])){
     // Form Variables
-    $handle= fopen('config/success.php','w');
+    /*$handle= fopen('../config/success.php','w');
     $txt= '<?php $success="" ?>';
     fwrite($handle, $txt);
-    fclose($handle);
+    fclose($handle);*/
     $title= mysqli_real_escape_string($conn, $_POST['title']);
     $body= mysqli_real_escape_string($conn, $_POST['body']);
     $author= mysqli_real_escape_string($conn, $_POST['author']);
@@ -24,8 +24,8 @@
     }
 ?>
 
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/navbar.php'; ?>
+<?php include '../inc/header.php'; ?>
+<?php include '../inc/navbar.php'; ?>
 <div class='container'>
     <br>
     <h1>Add Post</h1>
@@ -48,4 +48,4 @@
         <input type='submit' value='submit' name='submit_add' class='btn btn-primary'>
     </form>
 </div>
-<?php include 'inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

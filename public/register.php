@@ -1,6 +1,6 @@
 <?php
-    require 'config/config.php';
-    require 'config/db.php';
+    require '../config/config.php';
+    require '../config/db.php';
 
 
     // Check for submit
@@ -73,8 +73,8 @@
 }
 ?>
 
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/navbar.php'; ?>
+<?php include '../inc/header.php'; ?>
+<?php include '../inc/navbar.php'; ?>
 <?php echo $alert;?>
 <div class='container'>
     <br>
@@ -105,4 +105,4 @@
     <br>
     <p>Already have an account? <a href="login.php">Login here</a>.</p>
 </div>
-<?php include 'inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

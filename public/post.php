@@ -1,14 +1,14 @@
 <?php
-    require 'config/config.php';
-    require 'config/db.php';
+    require '../config/config.php';
+    require '../config/db.php';
 
         // Check for submit
     if(isset($_POST['delete'])){
     // Form Variables
-    $handle= fopen('config/success.php','w');
+    /*$handle= fopen('../config/success.php','w');
     $txt= '<?php $success3="" ?>';
     fwrite($handle, $txt);
-    fclose($handle);
+    fclose($handle); */
     $delete_id= mysqli_real_escape_string($conn, $_POST['delete_id']);
     // Insert query
     $query= "DELETE FROM posts WHERE id = {$delete_id}";
@@ -51,17 +51,17 @@ mysqli_free_result($result);
 
 mysqli_close($conn);
 ?>
-<?php include 'inc/header.php'; ?>
-<?php include 'inc/navbar.php'; ?>
+<?php include '../inc/header.php'; ?>
+<?php include '../inc/navbar.php'; ?>
     <div class='container jumbotron'>
     <h1 class='display-3'> <?php echo $post['title']; ?> </h1>
             <small>Created at: <?php echo $post['timestamp']; ?> by <?php echo $post['author']; ?></small>
             <p class='lead'><?php echo $post['body']; ?></p>
             <hr>
             <div class='btn-toolbar container'>
-            <a href="<?php echo ROOT_URL.'editpost.php?id='.$post['id']?>" class='btn btn-info'>Edit</a>
-            <?php if($idback !== 0) echo "<a class='btn btn-primary' href='post.php?id=".$idback."'>Back</a>" ; ?>
-            <?php if($idfwd !== ($num_rows + 1)) echo "<a class='btn btn-primary' href='post.php?id=".$idfwd."'>Next</a>" ; ?>   
+            <a href="<?php echo ROOT_URL.'/editpost.php?id='.$post['id']?>" class='btn btn-info'>Edit</a>
+            <?php if($idback !== 0) echo "<a class='btn btn-primary' href='/post.php?id=".$idback."'>Back</a>" ; ?>
+            <?php if($idfwd !== ($num_rows + 1)) echo "<a class='btn btn-primary' href='/post.php?id=".$idfwd."'>Next</a>" ; ?>   
             <form class="right" method='POST' action="<?php echo $_SERVER['PHP_SELF'];?>">
             <input type="hidden" name="delete_id" value="<?php echo $post['id'];?>">
             <input type="submit" name='delete' value='Delete' class='btn btn-danger'>
@@ -69,4 +69,4 @@ mysqli_close($conn);
             </div>
     </div>
 
-<?php include 'inc/footer.php'; ?>
+<?php include '../inc/footer.php'; ?>

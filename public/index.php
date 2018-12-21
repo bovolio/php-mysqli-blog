@@ -1,9 +1,10 @@
 <?php
     require "../config/config.php";
     require '../config/db.php';
-    include '../config/success.php';
+    // include '../config/success.php';
 $query = 'SELECT * FROM posts ORDER BY timestamp DESC';
-// TODO: ADD VALIDATION FOR FORMS
+// TODO: ADD VALIDATION FOR FORMS IN BACKEND
+
 
 // GET RESULTS
 
@@ -24,19 +25,19 @@ mysqli_close($conn);
 
 <?php include '../inc/header.php'; ?>
 <?php include '../inc/navbar.php'; ?>
-<?php if(isset($success)) { echo 
+<?php /* if(isset($success)) { echo 
 "<div class='alert alert-dismissible alert-success' name='alert-success'>
   <button type='button' class='close' data-dismiss='alert'>&times;</button>
   <strong>Well done!</strong> You have successfully created your post!
 </div>";
-unlink('config/success.php');
+unlink('../config/success.php');
  } ?>
  <?php if(isset($success2)) { echo 
 "<div class='alert alert-dismissible alert-success' name='alert-success'>
   <button type='button' class='close' data-dismiss='alert'>&times;</button>
   <strong>Well done!</strong> You have successfully edited your post!
 </div>";
-unlink('config/success.php');
+unlink('../config/success.php');
  } ?>
 
  <?php if(isset($success3)) { echo 
@@ -44,8 +45,8 @@ unlink('config/success.php');
   <button type='button' class='close' data-dismiss='alert'>&times;</button>
   <strong>Well done!</strong> You have successfully deleted your post!
 </div>";
-unlink('config/success.php');
- } ?>
+unlink('../config/success.php');
+ } */ ?>
     <div class='container'>
     <br>
     <h1>Posts</h1>

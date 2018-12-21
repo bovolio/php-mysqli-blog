@@ -1,7 +1,7 @@
-<?php require 'config/config.php';
-      require 'config/db.php';?>
-<?php include 'inc/header.php';?>
-<?php include 'inc/navbar.php';?>
+<?php require '../config/config.php';
+      require '../config/db.php';?>
+<?php include '../inc/header.php';?>
+<?php include '../inc/navbar.php';?>
 <?php echo $alert;?>
 <div class='container'>
     <br>
@@ -22,4 +22,4 @@
     <br>
     <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
 </div>
-<?php include 'inc/footer.php';?>
+<?php include '../inc/footer.php';?>
