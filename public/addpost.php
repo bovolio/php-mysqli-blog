@@ -6,6 +6,7 @@ session_start();
     // Check for submit
     if(isset($_POST['submit_add'])){
     // Form Variables
+    $_SESSION["success1"] = "";
     $title= mysqli_real_escape_string($conn, $_POST['title']);
     $body= mysqli_real_escape_string($conn, $_POST['body']);
     $author= mysqli_real_escape_string($conn, $_POST['author']);

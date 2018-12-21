@@ -3,7 +3,7 @@ session_start();
 
     require "../config/config.php";
     require '../config/db.php';
-    // include '../config/success.php';
+
 $query = 'SELECT * FROM posts ORDER BY timestamp DESC';
 // TODO: ADD VALIDATION FOR FORMS IN BACKEND
 // TODO: ADD NOTIFICATIONS USING SESSIONS
@@ -15,7 +15,7 @@ $result = mysqli_query($conn, $query);
 // FETCH DATA
 
 $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//var_dump($posts);
+
 // FREE RESULT
 
 mysqli_free_result($result);
@@ -25,30 +25,9 @@ mysqli_free_result($result);
 mysqli_close($conn);
 ?>
 
-<?php include '../inc/header.php'; ?>
-<?php include '../inc/navbar.php'; ?>
-<?php /* if(isset($success)) { echo 
-"<div class='alert alert-dismissible alert-success' name='alert-success'>
-  <button type='button' class='close' data-dismiss='alert'>&times;</button>
-  <strong>Well done!</strong> You have successfully created your post!
-</div>";
-unlink('../config/success.php');
- } ?>
- <?php if(isset($success2)) { echo 
-"<div class='alert alert-dismissible alert-success' name='alert-success'>
-  <button type='button' class='close' data-dismiss='alert'>&times;</button>
-  <strong>Well done!</strong> You have successfully edited your post!
-</div>";
-unlink('../config/success.php');
- } ?>
-
- <?php if(isset($success3)) { echo 
-"<div class='alert alert-dismissible alert-danger' name='alert-danger'>
-  <button type='button' class='close' data-dismiss='alert'>&times;</button>
-  <strong>Well done!</strong> You have successfully deleted your post!
-</div>";
-unlink('../config/success.php');
- } */ ?>
+<?php require '../inc/header.php'; ?>
+<?php require '../inc/navbar.php'; ?>
+<?php include '../inc/notifications.php'; ?>
     <div class='container'>
     <br>
     <h1>Posts</h1>

@@ -1,17 +1,15 @@
 <?php
+    session_start();
     require '../config/config.php';
     require '../config/db.php';
 
         // Check for submit
     if(isset($_POST['delete'])){
     // Form Variables
-    /*$handle= fopen('../config/success.php','w');
-    $txt= '<?php $success3="" ?>';
-    fwrite($handle, $txt);
-    fclose($handle); */
     $delete_id= mysqli_real_escape_string($conn, $_POST['delete_id']);
     // Insert query
     $query= "DELETE FROM posts WHERE id = {$delete_id}";
+    $_SESSION["success3"] = "";
     //die($query);
     if(mysqli_query($conn, $query)){
         header('Location: '.ROOT_URL.'');

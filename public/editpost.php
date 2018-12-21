@@ -1,11 +1,10 @@
-<?php
+<?php session_start();
     require '../config/config.php';
     require '../config/db.php';
 
     // Check for submit
     if(isset($_POST['submit'])){
     // Form Variables
-
     $update_id= mysqli_real_escape_string($conn, $_POST['update_id']);
     $title= mysqli_real_escape_string($conn, $_POST['title']);
     $body= mysqli_real_escape_string($conn, $_POST['body']);
@@ -17,7 +16,8 @@
                     author='$author', 
                     body='$body' 
                     WHERE id = {$update_id}";
-    
+    $_SESSION["success2"] = "";
+
     if(mysqli_query($conn, $query)){
         header('Location: '.ROOT_URL.'');
     } else {
