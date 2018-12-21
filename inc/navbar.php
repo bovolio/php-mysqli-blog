@@ -20,10 +20,13 @@ if(isset($_POST['submit-search'])){
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo ROOT_URL; ?>">Home<span class="sr-only">(current)</span></a>
       </li>
+      <?php if($_SESSION["loggedin"] == true){ ?>
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo ROOT_URL.'/addpost.php';?>">Add Post<span class="sr-only">(current)</span></a>
       </li>
+      <?php }; ?>
       </ul>
+      <?php if($_SESSION["loggedin"] == false){ ?>
       <ul style='list-style-type: none;'>
       <li style='float: right;' class="nav-item active" style='list-style-type: none;'>
         <a class="nav-link" style='color:#fff' href="<?php echo ROOT_URL.'/register.php'; ?>">Register<span class="sr-only">(current)</span></a>
@@ -32,6 +35,14 @@ if(isset($_POST['submit-search'])){
         <a class="nav-link" style='color:#fff' href="<?php echo ROOT_URL.'/login.php'; ?>">Log in<span class="sr-only">(current)</span></a>
       </li>
     </ul>
-
+      <?php }else{?>
+        <ul style='list-style-type: none;'>
+        <li style='float: right;' class="nav-item active" style='list-style-type: none;'>
+        <a class="nav-link" style='color:#fff' href="<?php echo ROOT_URL.'/profile.php'; ?>">Profile<span class="sr-only">(current)</span></a>
+      </li>
+      <li style='float: right;' class="nav-item active" style='list-style-type: none;'>
+        <a class="nav-link" style='color:#fff' href="<?php echo ROOT_URL.'/logout.php'; ?>">Log Out<span class="sr-only">(current)</span></a>
+      </li>
+      </ul> <?php }?>      
   </div>
 </nav>

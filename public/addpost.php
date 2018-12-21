@@ -1,14 +1,11 @@
 <?php
+session_start();
     require '../config/config.php';
     require '../config/db.php';
 
     // Check for submit
     if(isset($_POST['submit_add'])){
     // Form Variables
-    /*$handle= fopen('../config/success.php','w');
-    $txt= '<?php $success="" ?>';
-    fwrite($handle, $txt);
-    fclose($handle);*/
     $title= mysqli_real_escape_string($conn, $_POST['title']);
     $body= mysqli_real_escape_string($conn, $_POST['body']);
     $author= mysqli_real_escape_string($conn, $_POST['author']);

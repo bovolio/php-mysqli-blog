@@ -5,10 +5,7 @@
     // Check for submit
     if(isset($_POST['submit'])){
     // Form Variables
-    $handle= fopen('../config/success.php','w');
-    $txt= '<?php $success2="" ?>';
-    fwrite($handle, $txt);
-    fclose($handle);
+
     $update_id= mysqli_real_escape_string($conn, $_POST['update_id']);
     $title= mysqli_real_escape_string($conn, $_POST['title']);
     $body= mysqli_real_escape_string($conn, $_POST['body']);

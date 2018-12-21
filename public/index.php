@@ -1,4 +1,6 @@
 <?php
+session_start();
+
     require "../config/config.php";
     require '../config/db.php';
     // include '../config/success.php';
