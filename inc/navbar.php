@@ -10,7 +10,7 @@ if(isset($_POST['submit-search'])){
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style='color:#D40ED6' href="<?php echo ROOT_URL; ?>">PHP Blog</a>
+  <a class="navbar-brand" style='color:#8FF43C' href="<?php echo ROOT_URL; ?>"><b>PHP Blog</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

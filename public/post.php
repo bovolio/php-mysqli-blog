@@ -57,12 +57,14 @@ mysqli_close($conn);
             <p class='lead'><?php echo $post['body']; ?></p>
             <hr>
             <div class='btn-toolbar container'>
+            <?php if(isset($_SESSION['loggedin'])){?>
             <a href="<?php echo ROOT_URL.'/editpost.php?id='.$post['id']?>" class='btn btn-info'>Edit</a>
+            <input type="submit" name='delete' value='Delete' class='btn btn-danger'>
+            <?php }; ?>
             <?php if($idback !== 0) echo "<a class='btn btn-primary' href='/post.php?id=".$idback."'>Back</a>" ; ?>
             <?php if($idfwd !== ($num_rows + 1)) echo "<a class='btn btn-primary' href='/post.php?id=".$idfwd."'>Next</a>" ; ?>   
             <form class="right" method='POST' action="<?php echo $_SERVER['PHP_SELF'];?>">
             <input type="hidden" name="delete_id" value="<?php echo $post['id'];?>">
-            <input type="submit" name='delete' value='Delete' class='btn btn-danger'>
             </form>
             </div>
     </div>
